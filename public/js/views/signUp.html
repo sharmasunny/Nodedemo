@@ -1,0 +1,36 @@
+<div class="main-view-content  ">
+<div  class="login active">
+ <form  id="login-form" name="mySignUpForm" novalidate>
+        <fieldset>
+          <legend>
+            signUp
+          </legend>
+ <label>
+            <span>FirstName *</span>
+            <input  required=""  ng-model="myname" name="myname" placeholder="Enter your username " required type="text">
+          </label>
+          <label>
+             <span>LastName *</span>
+            <input  required=""  ng-model="mylastName" name="myname" placeholder="Enter your username " required type="text">
+          </label>
+          <label>
+            <span>Email *</span>
+            <input  required=""  ng-model="myemail" name="myemail" placeholder="Enter your email  " required type="email">
+            <p ng-show="mySignUpForm.myemail.$invalid">email address novalid</p>
+          </label>
+          <label>
+            <span>Password *</span>
+            <input ng-maxlength =20 ng-minlength=6 name="password" ng-model="mypassword" placeholder="Enter your password"  type="password" required>
+            <p ng-show="(mySignUpForm.password.$error.maxlength || myForm.password.$error.minlength) ">Passwords must be between 8 and 20 characters.</p>
+   <p ng-show="mySignUpForm.password.$invalid">password not novalid</p>
+          </label>
+          </label>
+  <button  class="main-button login" ng-disabled="mySignUpForm.$invalid" ng-click="signUpUser()">Save</button>
+  <span ng-show="mySignUpForm.$invalid">plz fill the all filed valid</span>
+
+
+        </fieldset>
+      </form>
+
+  </div>
+</div>

@@ -1,0 +1,61 @@
+
+<div id="logout" ng-show="logOut"> 
+  <p class="main-button logout" ng-click="logOutUser()"> Logout </p>
+   </div>
+<div class="main-view-content  ">
+  <div class="employees active">
+          <table class="employees-overview active" width=100% colspan=10>
+              <tr ng-repeat-start="x in contacts" id="sub-nav" ng-show="clickCreateUser=true">
+                  <td  colspan="2">
+                     <a name="bAdd"  ng-click="clickCreateUser=false" class="subButton" id="bAdd" href=""> </span>
+                        Create
+                      </a></td>
+                      <td ><a name="bEdit"  id="bEdit" href=""  class="disabledButton" ng-click="edit(x.id);">
+                        Edit
+                      </a></td>
+                      <td><a name="bDelete"   id="bDelete" href="" class="disabledButton" ng-click="deletName(x.id)">
+                        Delete
+                      </a>
+                    </td> 
+                   </tr>
+                   <tr ng-show="clickCreateUser" ng-repeat-end>
+		  <td   id="employee-list">{{x.lastName}}</td>
+                 </tr>
+  </table>
+    </div>
+	 <div class="employee-edit"  ng-show="clickCreateUser" >
+         <form >
+        
+                <label>
+                  <span>First name:</span>
+                  <input type="text" ng-model="newContact.name">
+                </label>
+                <label>
+                  <span>Last name:</span>
+             <input type="text" ng-model="newContact.lastname">
+                </label>
+
+                <label>
+                    <span>e-Mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <input type="email" ng-model="newContact.email">
+                </label>
+
+                <label>
+                  <span>Start date:</span>
+                 <input type="text" ng-model="newContact.startDate">
+                </label>
+
+                <div class="formFooter">
+                  <button class="main-button" style=" margin-left: 159px" ng-click ="addUser();">
+                      Save
+                  </button>
+                  <button  class="bDelete main-button" ng-click="clickCreateUser = true">
+                      Cancel
+                   </button>
+                </div>
+            </form>
+       </div>
+   </div>
+  
+             
+</div>

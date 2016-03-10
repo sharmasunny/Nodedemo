@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+      <head>
+	  <title>Caffe-App</title>
+	  <link href="/css/main.css" rel="stylesheet">
+	  <script src="/js/angular.min.js"></script>
+	  <script src="/js/angular-route.min.js"></script>
+      <script  src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+	  <script src="/js/module/myapp.js"></script>
+	  <script src="/js/controller/mycontroller.js"></script>
+	  <script src="/js/services/login-servic/login.js"></script>
+	  <script src="/js/services/create_user/adduser.js"></script>
+	  </head>
+	  <body ng-app="myApp">
+	  <div  class="main-view">
+            <header>
+   <div><ng-view></ng-view></div>
+          </header> 
+    <footer>
+           <p class="major">
+               All written in <a href="#">AngularJs</a>.
+              </p>
+              <p class="minor">
+                by 
+                <a href="#">Mangal Singh </a> @2015
+              </p>
+          </footer>
+      
+      </div>
+      </body>
+	  </html>
