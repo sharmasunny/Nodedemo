@@ -5,9 +5,26 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/loginApp');
+var db = mongoose.connection;
+  
+db.on('error', function (err) {
+  console.log('mongo connection error', err);
+});
+
+db.once('open', function () {
+  console.log('mongo connected.');
+});
+
+
+
+
 var routes = require('./routes/index');
 //var my = require('./routes/c');
 var users = require('./routes/users');
+
 
 var app = express();
 
