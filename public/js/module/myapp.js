@@ -1,5 +1,5 @@
 var app =angular.module('myApp', ['ngRoute','ngStorage']);
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider','$locationProvider', function($routeProvider,$locationProvider) {
     $routeProvider.
 	 when('/login', {
         templateUrl: 'js/views/login.html',
@@ -15,7 +15,10 @@ app.config(['$routeProvider', function($routeProvider) {
     }).
       otherwise( {
         redirectTo: '/login' 
-      })
+      });
 
-     
+      // $locationProvider.html5Mode({
+      //   enabled: true,
+      //   requireBase: false
+      // });
 }]);

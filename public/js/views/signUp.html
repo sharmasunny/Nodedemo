@@ -1,11 +1,15 @@
 <div class="main-view-content  ">
 <div  class="login active">
+  <h2 style="color:red">{{error}}</h2>
  <form  id="login-form" name="mySignUpForm" novalidate>
         <fieldset>
+
           <legend>
             signUp
           </legend>
- <label>
+
+ <label>    
+
             <span>FirstName *</span>
             <input  required=""  ng-model="myname" name="myname" placeholder="Enter your username " required type="text">
           </label>
