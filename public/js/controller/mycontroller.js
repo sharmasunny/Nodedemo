@@ -69,9 +69,8 @@ $scope.error = '';
 
 app.controller('viewController',['$scope','loginService','createUser','$localStorage','$http', 
 	function ($scope,loginService,createUser,$localStorage,$http) {
-  $scope.data = $localStorage.emailMessage;
-  
-console.log(localStorage.getItem("user"));
+  //$scope.data = $localStorage.emailMessage;
+   $scope.data = JSON.parse(localStorage.getItem("user"));
 
 $http({
 	  method: 'GET',

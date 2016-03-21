@@ -35,7 +35,7 @@ module.exports.signup =  function(req, res) {
 
 
 
-exports.login =function(req,res){
+module.exports.login =function(req,res){
 
 	var email = req.body.email;
 	var password = req.body.password;
@@ -59,7 +59,7 @@ exports.login =function(req,res){
 
 
 // sunny@Get All users
-exports.getAllUser = function(req,res){
+module.exports.getAllUser = function(req,res){
 
 	Usermodel.find({},function(err,users){
 		if(err){
