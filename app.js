@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var http = require('http');
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/loginApp');
@@ -50,11 +50,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+
 // error handlers
 
 // development error handler
@@ -81,3 +77,12 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+// var port = 30001
+// app.set('port',port);
+
+
+
+// var server = http.createServer(app);
+
+// server.listen(port);
